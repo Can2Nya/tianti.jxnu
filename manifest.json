@@ -1,15 +1,27 @@
 {
   "manifest_version": 2,
-
-  "name": "记分用的东西",
-  "description": "小透明应用",
-  "version": "1.0",
-
-  "permissions": [
-    "tabs"
-  ],
-  "browser_action": {
-    "default_icon": "icon.png",
-    "scripts": ["background.js"]
+  "name": "tiantisai-jxnu",
+  "description": "记分工具",
+  "version": "0.0.2",
+  "icons": {
+    "16": "icon_chrome.png",
+    "128": "icon_chrome.png"
   },
+  "background": { 
+    "scripts": ["jquery-2.0.0.min.js","background.js"],
+    "persistent": false
+  },
+  "permissions": ["tabs","http://*/*","https://*/*"],
+  "page_action": {
+    "default_icon": {
+      "16": "icon_chrome.png",
+      "38": "icon.png"
+    },
+    "default_title": "tianti-jxnu"
+    
+  },
+  "content_scripts":[{
+    "matches":["http://acm.hdu.edu.cn/*"],
+    "js":["jquery-2.0.0.min.js", "content_script.js"]
+  }]
 }

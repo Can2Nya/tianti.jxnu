@@ -39,6 +39,9 @@
           // {
           //   name: user.group,
           // }]
+          info.pointL1 = info.pointL1+user.pointL1
+          info.pointL2 = info.pointL2+user.pointL2
+          info.award = info.award+user.award
         }
       })
       if(!flag){
@@ -54,22 +57,26 @@
           // award: 0
         }]
       }
-      if(flag){
-        // 如果有重复就记分
-        groupInfo.map(function(info){
-          if(info.name == user.group){
-            info.pointL1 = info.pointL1+user.pointL1
-            info.pointL2 = info.pointL2+user.pointL2
-            info.award = info.award+user.award
-          }
-        })
-        // console.log(user.name+"2")
-      }
+      // if(flag){
+      //   // 如果有重复就记分
+      //   groupInfo.map(function(info){
+      //     if(info.name == user.group){
+      //       info.pointL1 = info.pointL1+user.pointL1
+      //       info.pointL2 = info.pointL2+user.pointL2
+      //       info.award = info.award+user.award
+      //     }
+      //   })
+      //   // console.log(user.name+"2")
+      // }
       // console.log(user.name+"1")
     })
     return this
   }
   this.getGroupData = function(){
+    chrome.runtime.sendMessage({
+      type: 'progress',
+      payload: groupInfo
+    })
     return groupInfo
   }
   this.setData = function(){

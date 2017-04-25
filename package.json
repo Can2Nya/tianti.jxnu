@@ -1,0 +1,24 @@
+{
+  "name": "tianti.jxnu",
+  "version": "1.0.0",
+  "description": "一个天梯赛用来记分的插件",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Can2Nya/tianti.jxnu.git"
+  },
+  "author": "can2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Can2Nya/tianti.jxnu/issues"
+  },
+  "homepage": "https://github.com/Can2Nya/tianti.jxnu#readme",
+  "dependencies": {
+    
+    "express": "^4.15.2"
+  }
+}

@@ -21,10 +21,15 @@ chrome.tabs.onUpdated.addListener(checkForValidUrl);
 
 var info = {}
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
-	// if(message.type == 'progress'){
-	// 	info.title = message.payload.title
-	// 	info.count = message.payload.count
-	// 	info.complate = message.payload.complate
-	// }
+	if(message.type == 'progress'){
+		$.ajax({
+			type: "POST",
+			url: "http://localhost:3000/tianti/save",
+			data: {
+				"status": "ok",
+				"data": JSON.stringify(message.payload)
+			}
+		})
+	}
 	console.log(message)
 })

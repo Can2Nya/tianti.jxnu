@@ -31,7 +31,7 @@ function render(data){
 
 function getData(){
   $.ajax({
-    url: "http://localhost:3000/tianti/getData",
+    url: "/tianti/getData",
     dataType: "json",
     type: "GET"
   }).done(function(res){

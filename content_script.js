@@ -70,6 +70,20 @@
       // }
       // console.log(user.name+"1")
     })
+    if(groupInfo.length > 0){
+      groupInfo = groupInfo.map(function(group, index){
+        if(group.pointL1 >= 200){
+          
+          group.allpoint = group.pointL1 + group.pointL2 + group.award
+          return group
+        }else{
+          
+          group.allpoint = group.pointL1
+          return group
+        }
+        
+      })
+    }
     return this
   }
   this.getGroupData = function(){

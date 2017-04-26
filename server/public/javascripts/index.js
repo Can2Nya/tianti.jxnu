@@ -12,7 +12,7 @@ function render(data){
           ${line.name}
         </div>
         <div class="L1">
-          <div class="point" style="width:${(line.pointL1 / 675.0) * 100}%">L1:${line.pointL1}</div>
+          <div class="point" style="width:${(line.pointL1 / 360.0) * 100}%">L1:${line.pointL1}</div>
         </div>
         <div class="L2">
           <div class="point" style="width:${(line.pointL2 / 270.0) * 100}%">L2:${line.pointL2}</div>
